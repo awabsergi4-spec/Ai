@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import numpy as np
 import re
 
@@ -89,9 +89,7 @@ def forward(X):
 @app.route("/")
 def home():
 
-    return jsonify({
-        "message": "Spam Detection API is running."
-    })
+    return render_template("index.html")
 
 
 # ============================
